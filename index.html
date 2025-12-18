@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4: Design Patterns Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+        }
+        h1 {
+            color: #569cd6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #output {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre-wrap;
+            min-height: 300px;
+            color: #ce9178;
+        }
+        .btn {
+            background-color: #0e639c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+        .btn:hover {
+            background-color: #1177bb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lab 4: Server Configuration System</h1>
+        <p>Demonstrating 5 Design Patterns: Singleton, Factory, Abstract Factory, Builder, Prototype.</p>
+        
+        <button class="btn" onclick="location.reload()">Run Simulation Again</button>
+
+        <div id="output">Initializing simulation...</div>
+    </div>
+
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            const output = document.getElementById('output');
+            if (output) {
+                output.innerHTML += `<br><strong style="color: #f48771;">⚠️ Error: ${message}</strong><br>`;
+            }
+        };
+
+        // Check if the module loaded successfully
+        setTimeout(() => {
+            const output = document.getElementById('output');
+            if (output && output.innerHTML.trim() === 'Initializing simulation...') {
+                output.innerHTML = ''; // Clear init message
+                output.innerHTML += '<h3 style="color: #f48771;">⚠️ Скрипт не запустився</h3>';
+                output.innerHTML += '<p>Скоріше за все, браузер заблокував виконання коду через <strong>CORS Policy</strong>.</p>';
+                output.innerHTML += '<p>Це стається, коли ви відкриваєте файл напряму (через подвійний клік, адреса починається з <code>file://</code>).</p>';
+                output.innerHTML += '<hr style="border-color: #333;">';
+                output.innerHTML += '<h4>✅ Як виправити (2 варіанти):</h4>';
+                output.innerHTML += '<ol>';
+                output.innerHTML += '<li><strong>У VS Code:</strong> Встановіть розширення <em>"Live Server"</em>, натисніть правою кнопкою на <code>index.html</code> і виберіть <em>"Open with Live Server"</em>.</li>';
+                output.innerHTML += '<li><strong>У Терміналі:</strong> Просто запустіть команду <code>node index.js</code> (результат буде в консолі).</li>';
+                output.innerHTML += '</ol>';
+            }
+        }, 1000);
+    </script>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>

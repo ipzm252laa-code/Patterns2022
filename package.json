@@ -1,0 +1,21 @@
+{
+  "name": "patterns2022",
+  "version": "1.0.0",
+  "description": "Lab 4: Design Patterns Project - Server Configuration System",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "design-patterns",
+    "singleton",
+    "factory",
+    "abstract-factory",
+    "builder",
+    "prototype"
+  ],
+  "author": "",
+  "license": "ISC"
+}
